@@ -1,3 +1,4 @@
+//Lezione Denny 26/09
 codeunit 50100 Prove
 {
     trigger OnRun()
