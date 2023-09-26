@@ -7,7 +7,7 @@ codeunit 50100 Prove
 
     var
         myInt: Integer;
-
+    //
     local procedure Test()
     var
         IntVal: Integer;
@@ -105,6 +105,7 @@ codeunit 50100 Prove
     var
         Cust: Record Customer; //dicharato variabile di tipo complesso
         TextVal: Text;
+        CustomerLbl: Label 'Cliente :'; //testo fisso che poi devo tradurre
     begin
 
         myInt := 10;
