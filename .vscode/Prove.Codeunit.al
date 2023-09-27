@@ -160,5 +160,124 @@ codeunit 50100 Prove
 
     end;
 
+    local procedure GetRecord()
+    var
+        Cust: Record Customer;
+        SalesP: Record "Salesperson/Purchaser";
+        SalesHdr: Record "Sales Header";
+        CustNo: Code[20];
+    begin
+        Message(Cust.Name); // "stringa vuota"
+
+        Cust.Get('101016');
+        Message(Cust.Name); // Cannon Group SpA
+
+        if SalesP.Get(Cust."Salesperson Code") then
+            Message('Esiste agente')
+        else
+            Message('Agente non settato');
+
+        CustNo := '20000';
+        Cust.Get(CustNo);
+
+        SalesHdr.Get(SalesHdr."Document Type"::Order, '1003');
+
+
+
+    end;
+
+    local procedure FindSomething()
+    var
+        Vend: Record Vendor;
+        LocCode1: Code[10];
+        LocCode2: Code[10];
+        Cust: Record Customer;
+        SalesHdr: Record "Sales Header";
+
+    begin
+        if Vend.FindSet() = true then
+            repeat
+            until Vend.Next() = 0;
+
+        //Dati ordinati in base alla chiave primaria PK
+
+        //Vend.FindFirst();
+        //Vend.FindLast();
+        LocCode1 := 'BLU';
+        LocCode2 := 'ROSSO';
+        Vend.SetFilter("Location Code", '%1|%2', LocCode1, Cust."Location Code");
+        Vend.SetFilter("Location Code", LocCode1 + '|' + LocCode2);
+
+        Vend.SetFilter("Location Code", 'BLU|ROSSO');
+
+        Vend.SetFilter(Name, 'A*');
+        Vend.SetFilter(Balance, '>50');
+
+        Vend.SetFilter(Balance, '=1200');
+        Vend.SetFilter(Balance, '1200');
+
+        Vend.SetFilter(Balance, '>=1000&<=2000');
+        Vend.SetFilter(Balance, '1200', 2000);
+        Vend.SetFilter(Balance, '7000');
+
+
+        Vend.SetRange(Balance); //-> Senza paramentr = togli i filtri impostati!
+
+        Vend.SetCurrentKey(Name, City);
+        Vend.Ascending := false; //modo discendente Z-A
+
+        if not Vend.IsEmpty() then;
+
+        SalesHdr.SetRange("Document Type", SalesHdr."Document Type"::Invoice)
+
+
+    end;
+
+    local procedure WriteSomething() //inserimento di un record
+    var
+        Vend: Record Vendor;
+        Cust: Record Customer;
+        SalesHdr: Record "Sales Header";
+    begin
+        Cust."No." := 'Test.01';
+        Cust.Name := 'Sono io';
+        //...
+        if not Cust.Insert() then;
+        //...;
+
+        Cust.Get('10000');
+        Cust.Name := 'Paolo Rossi'; //Non fa partire il trigger OnValidate
+        Cust.Validate(Name, 'Paolo Rossi'); // Crea sia il nome e sia fa partire il Trigger OnValidate sul Nome
+        Cust.City := 'Vicenza';
+        //...
+        Cust.Modify(true); // true nella parentesi per attivare il RunTrigger
+
+        Cust.SetRange("Location Code", 'BLU');
+        if Cust.FindSet() then
+            repeat
+                Cust."Location Code" := 'ROSSO';
+                Cust.Modify();
+            until Cust.Next() = 0;
+
+        //Microsoft per fare la modifica massiva veloce ha creato ModifyAll
+        //con ModifyAll è più ottimizzato e fa la stessa cosa
+
+        Cust.SetRange("Location Code", 'BLU');
+        Cust.ModifyAll("Location Code", 'ROSSO', true); // true-> attiva Trigger
+
+        Cust.Get('10000');
+        Cust.Delete();
+
+        //Microsoft per fare la cancellazione massiva veloce ha creato DeleteAll
+        //con DeleteAll è più ottimizzato e fa la stessa cosa
+
+        Cust.SetRange("Location Code", 'BLU');
+        Cust.DeleteAll();
+
+        Cust.SetRange("Location Code", 'BLU');
+        if not Cust.IsEmpty then
+            Cust.DeleteAll();
+
+    end;
 
 }

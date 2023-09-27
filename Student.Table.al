@@ -14,7 +14,7 @@ table 50100 Student //nome deve essere al singolare - l'intervallo dell'id lo po
             Caption = 'Nr';
         }
 
-        field(2; "Last Name"; tEXT[100])
+        field(2; "Last Name"; Text[100])
         {
 
             DataClassification = CustomerContent;
@@ -92,12 +92,11 @@ table 50100 Student //nome deve essere al singolare - l'intervallo dell'id lo po
         }
     }
 
-
-}
-/*
-     trigger OnInsert()
+    trigger OnInsert()
     begin
-
+        TestField(Code);
+        if Rec.Graduated then
+            Rec."Average Rating" := 100;
     end;
 
     trigger OnModify()
@@ -114,4 +113,9 @@ table 50100 Student //nome deve essere al singolare - l'intervallo dell'id lo po
     begin
 
     end;
-*/
+
+
+}
+
+
+
