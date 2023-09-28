@@ -93,27 +93,49 @@ table 50100 Student //nome deve essere al singolare - l'intervallo dell'id lo po
     }
 
     trigger OnInsert()
+    var
+        MissingRatingErr: Label 'Rating required';
+
     begin
         TestField(Code);
-        if Rec.Graduated then
-            Rec."Average Rating" := 100;
+        CheckIfGraduated();
+
+        //Scrivere Rec.Gratuated è ugaule a scrivere Graduated
+
+        if Graduated then
+            TestField("Average Rating");
+
+        //if Graduated then
+        //if "Average Rating" = 0 then
+        //Error(MissingRatingErr);
+
     end;
 
     trigger OnModify()
     begin
+        CheckIfGraduated();
+    end;
+
+    local procedure CheckIfGraduated()
+    begin
+        if Graduated then begin
+            TestField("Average Rating");
+            TestField(Age);
+            TestField(City);
+        end;
+
+        OnCheckIfGraduated(Rec);
 
     end;
 
-    trigger OnDelete()
+    //per permettere a qualcuno di poter scrivere nel mio codice creo un evento
+
+    [IntegrationEvent(false, false)]
+
+    local procedure OnCheckIfGraduated(var Student: Record Student)
     begin
 
     end;
-
-    trigger OnRename()
-    begin
-
-    end;
-
 
 }
 
