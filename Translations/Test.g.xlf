@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Test">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 1418429579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Student</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Method 2451657066 - NamedType 1436983626" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rating required</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Method OnInsert - NamedType MissingRatingErr</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 3558390861 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Age</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field Age - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 2274532368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Average Rating</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field Average Rating - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 714791889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nr</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 3716808183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field Contry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 1302820932 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date of Birth</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field Date of Birth - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 3444679095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>First Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field First Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 2303302321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gender</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field Gender - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 2303302321 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Male, Female</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field Gender - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 2109674627 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Graduated</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field Graduated - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1418429579 - Field 4068742839 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Student - Field Last Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1691819618 - Method 3680926724 - NamedType 76061626" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cliente :</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Prove - Method RepetUntilLoop - NamedType CustomerLbl</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

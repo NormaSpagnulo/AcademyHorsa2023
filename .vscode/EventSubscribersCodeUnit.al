@@ -39,6 +39,4 @@ codeunit 50101 "Test Eventi"
     begin
     end;
 
-
-
 }

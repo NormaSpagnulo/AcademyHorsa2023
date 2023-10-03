@@ -1,0 +1,6 @@
+{
+    "al.enableCodeAnalysis": false,
+    "al.backgroundCodeAnalysis": false,
+    "al.codeAnalyzers": ["${CodeCop}"]
+
+}
